@@ -1,0 +1,209 @@
+import java.util.Random;
+
+	// Carlos Sanchez
+	//A program integrating skills learned in COP 2006
+	/*LIST OF JAVA BUILT IN DATA TYPES-
+	 * BYTE-Minimum value of -128 and maximum value of 127. Useful for saving memory in large arrays, where memory saving actually matters.
+	 * SHORT-This is 16bit it has a minimum value of -32,768 and a max of 32,767. same guidelines apply as byte, you can use a short to save memory in large array, in situations where memory actually matters!
+	 * LONG- In Java SE 8 and further you can use the long data type to represent an unsigned  64-bit long, which has a minimum value of 0 and max of 2^64-1. Use when you need larger data types than that of int. 
+	 * DOUBLE- double-precision 64-bit IEEE 754 floating point. For decimal values, this data type is generally the default choice. Never use for precise values like currency
+	 * FLOAT - Single precision 32-bit IEEE 754 floating point. Use a float (instead of double) if you need to save memory in large arrays of floating point numbers. 
+	 * INT-minimum value of -2^31 and maximum of value of 2^31-1. In Java SE 8 and further you can use the int data type to represent unasigneed 32-bit integer, which has a minimum value of 0 and max value of 2^32-1.
+	 * CHAR-  Minimum value of '\u0000'(or0) and a maximum value of '\uffff' (or 65,535 inclusive)
+	 * STRING- String objects are immutable, meaning once created, the value cannot be changed!
+	The String class is not a primitive data type
+	 * BOOLEAN- Typically used as a true or false statement, represents one bit of info and default value is false 
+	 
+	 */
+
+	public class main {
+	  
+	//-------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- 
+	  //INSTANCE OF METHOD WITH ARGUMENTS
+	  // paramters, variables passed, identified: side1 and side2, needs to be multiplied with the * sign.
+	  // Arguments are the actual values that are passed in when method is invoked. Argument Identified
+	  
+	  public static double calculateTwoTimes(double length, double height) {
+	    double square;
+	    square = length * height;
+	return square; 
+	  } 
+	    
+	    public static void main (String[] args) {
+	      
+	      System.out.println("This is my integration project.");
+	      System.out.println("Demonstrating skills I've learned in COP");
+	      
+	      // Instance of a math Class
+	      System.out.println(Math.pow(3,3));
+	      
+	      
+	      
+	      //Here I compare two strings with == sign. The == works with objects because it is used to compare two operands. Whether they are equal or not.
+	        String s1 = "red"; 
+	        String s2 = "not red"; 
+	       if (s1 == s2){ 
+	  
+	        System.out.println("red and not red are now the same");
+	       }
+	      // compareTo with two objects 
+	      System.out.println(s1.compareTo(s2));
+	      
+	      //Example of ternary if else from class, this allows us to compare 3 terms with an ? sign also used >=
+	      int grade = 90;
+	      
+	      char finalLetter = (grade >= 90) ? 'A' : 'B';
+	      //  ? is ternary operator
+	      // variable x = (expression) ? value if true: value if false
+	      if (grade >=90) {
+	        finalLetter = 'A';
+	      }
+	      else if (grade >= 80){
+	        finalLetter = 'B';
+	      }
+	      else if (grade >= 70){
+	        finalLetter = 'C';
+	      }
+	      else if (grade >= 60){
+	        finalLetter = 'D';
+	      }
+	      else {
+	        finalLetter = 'F';
+	      }
+	      
+	      // Here i use || and && these represent 'and' and 'or'
+	        int n1 = 2;
+	        int n2 = 3;
+	        if((n1 + n2 >= 5) && (5>= 5-n1))
+	            System.out.println("n1 + n2 is 5!");
+	        if((n1 + n2 >= 5) || (n1 != n2))
+	            System.out.println("n1 and n2 are not the same number");
+	          //---------------------  -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- 
+	      // Used Switches and Breaks
+	      //Sometimes it is helpful to have multiple cases associated with the same code block so we use breaks in case statements, A switch statement allows a variable to be tested for equality against a list of values
+	        int month = 8;
+	        String monthString;
+	        switch (month) {
+	            case 1:  monthString = "January";
+	                     break;
+	            case 2:  monthString = "February";
+	                     break;
+	            case 3:  monthString = "March";
+	                     break;
+	            case 4:  monthString = "April";
+	                     break;
+	            case 5:  monthString = "May";
+	                     break;
+	            case 6:  monthString = "June";
+	                     break;
+	            case 7:  monthString = "July";
+	                     break;
+	            case 8:  monthString = "August";
+	                     break;
+	            case 9:  monthString = "September";
+	                     break;
+	            case 10: monthString = "October";
+	                     break;
+	            case 11: monthString = "November";
+	                     break;
+	            case 12: monthString = "December";
+	                     break;
+	            default: monthString = "Invalid month";
+	                     break;
+	        }
+	        System.out.println(monthString);
+	      //-------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- 
+	        // To skip to the next iteration in a loop we use the 'continue' statement
+	     
+	    char [] bigLetters = {'A', 'B', 'C', 'D', 'E'};
+	        
+	        for (char y : bigLetters ) {
+	          if ( y == 'D' ) {
+	            continue;
+	          }
+	          System.out.print( y );
+	          System.out.print("\n");
+	        }
+
+	      int thisNumber = 2;
+	        System.out.println(--thisNumber);
+	        // Output will be 1
+	            
+	      // Rolling a dice 
+	      // assignment "Random" ON REPLIT
+	      // used random class
+	      // used ++ sign
+	      int num = 0;
+	      int numberOfTimesRandomNumberPickedAndPrinted = 0;
+	      
+	      Random randomGen = new Random();
+	      
+	      while (numberOfTimesRandomNumberPickedAndPrinted < 5) {
+	        System.out.println(randomGen.nextInt(53));
+	        numberOfTimesRandomNumberPickedAndPrinted++;
+	      }
+	      
+	      for (int numberOfTimes = 0; numberOfTimes < 5; numberOfTimes++) {
+	        System.out.println(randomGen.nextInt(53));
+	        numberOfTimesRandomNumberPickedAndPrinted++;
+	      }
+	      
+	      
+	      int number; 
+	      for (int counter=1; counter<=6;counter++){
+	        number = 1+randomGen.nextInt(6);
+	            System.out.println(1+randomGen.nextInt(6));
+	      
+	      }
+	      
+//-------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- --------------------     
+	      //	REMAINING OPERATORS: %,+=,/,-,+
+	        // Used % sign
+	      int num1, num2, sum1;
+	      num1 = 100;
+	      num2 = 3;
+	      sum1 = num1 % num2;
+	      System.out.println(sum1);
+	        //Output will be 2
+	        
+	        // Used - sign
+	      sum1= sum1 - 1;{
+	      System.out.println(sum1);
+	     }
+	      //Output will be 8
+	        
+	       // used / sign
+	     sum1 = sum1/2;{
+	      System.out.println(sum1);
+	     }  
+	   
+	     // Used +
+	       System.out.println(sum1 + 500);
+	         sum1 =+5;
+	  // Used +=        	   
+	
+	//------------------------------------------------------------------------------------------------------------------------------------------
+	    // DEMONSTRATION OF A DO, WHILE, AND FOR LOOP   	               
+	int counter = 0;
+	   while (counter<5) {
+		   System.out.println(counter);
+	   counter++;
+	   
+	   
+	   
+	   }
+	   int counter69 = 15;
+	   
+	   do{
+		System.out.println("counter1: " + counter69);
+		counter69++;
+	   }while (counter69<=10);
+	   
+	   for(int counter2=6;counter<=21;counter+=3) {
+		   System.out.println("counter2:" + counter2);
+	   }
+	   
+	        }
+	    }
+
+
