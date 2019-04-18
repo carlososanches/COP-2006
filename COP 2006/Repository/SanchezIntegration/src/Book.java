@@ -1,5 +1,9 @@
 
 public class Book {
+//Make a class in separate file with private fields, public getters and setters, a constructor
+ // with
+ // and without parameters.
+ 
   private String author;
   private String Genre;
  //My Gets and Sets
